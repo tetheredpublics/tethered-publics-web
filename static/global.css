@@ -167,7 +167,7 @@ html {
     line-height: 24px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #000;
+    background-color: var(--tp-pink);
 }
 
 body,
@@ -298,6 +298,7 @@ h1.logo {
     min-height: 560px;
     position: relative;
     display: flex;
+    padding-bottom: 32px;
 }
 
 nav {
@@ -495,6 +496,14 @@ footer {
 
 .nav-bar-btn {
     display: none;
+}
+
+.post-message {
+    background-color: var(--tp-red);
+    color: #fff;
+    width: fit-content;
+    padding: 8px;
+    font-weight: 500;
 }
 
 @media (max-width: 600px) {
