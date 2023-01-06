@@ -1,2 +1,71 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	// let feedItems = [];
+
+	// function fetchFeedItems() {
+	// 	fetch("http://localhost:5173/feed.json")
+	// 		.then(data => data.json())
+	// 		.then(data => {
+	// 			console.log(data)
+	// 			feedItems = data.items
+	// 		})
+	// }
+
+	// function formatItemLabel(item) {
+	// 	let now = new Date();
+	// 	console.log(now, new Date(item.start_date))
+	// 	if (item.end_date &&  now > new Date(item.end_date)) {
+	// 		return `past ${item.kind}`
+	// 	}
+	// 	if (now > new Date(item.start_date)) {
+	// 		return `current ${item.kind}`
+	// 	}
+	// 	return `upcoming ${item.kind}`
+	// }
+
+	// fetchFeedItems()
+</script>
+
+<div class="section map-bg">
+	<div class="container hero">
+		<div class="hero-item first">
+			<img class="hero-img" src="./images/iphone12caseshotmap.png"/>
+		</div>
+		<div class="hero-item">
+			<h1>Location-Based Digital Art. Just Launched in South London</h1>
+			<p class="large-paragraph">
+				We're exhibiting site-specific digital artworks. See our first exhibition Digitally
+				Specific. Now available for Download.
+			</p>
+			<a
+				href="https://apps.apple.com/gb/app/tethered-publics/id1634618407?itsct=apps_box_badge&amp;itscg=30200"
+				style="display: inline-block; overflow: hidden; height: 56px; margin-bottom: 32px"
+				><img
+					src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1665100800?h=4f1c99d3c6ef0f8d892b640ee9e327cf"
+					alt="Download on the App Store"
+					style="height: 56px;"
+				/></a
+			>
+		</div>
+	</div>
+</div>
+<!-- <div class="section dim-bg">
+	<div class="container">
+		<h2 style="font-weight: 500;">What's Happening?</h2>
+		<div class="feed-container">
+		{#each feedItems as item}
+			<div class="feed-item">
+				<a style="display: block;" href="#click">
+					<div>
+						<label class="feed-item-label">{formatItemLabel(item)}</label>
+						<img 
+							class="feed-item-img" 
+							src="{item.cover_url}" 
+							title="{item.title}" alt="{item.title} - poster"
+						/>
+					</div>
+				</a>
+			</div>
+		{/each}
+		</div>
+	</div>
+</div> -->
