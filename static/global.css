@@ -173,62 +173,50 @@ html {
 body,
 .article {
     font-size: 16px;
+    font-weight: 400;
+    line-height: 2;
     background-color: var(--tp-pink);
-    line-height: 24px;
     margin: auto;
 }
 
+p {
+    margin-bottom: 1.5rem;
+}
+
 h1,
-.h1 {
-    font-weight: 500;
-    font-size: 56px;
-    line-height: 64px;
-    /* margin-top: 24px; */
-    /* margin-top: 16px; */
-    margin-bottom: 32px;
-}
-
 h2,
-.h2 {
-    /* font-weight: 600; */
-    font-size: 42px;
-    line-height: 48px;
-    margin-top: 24px;
-    margin-bottom: 24px;
-}
-
 h3,
-.h3 {
-    font-size: 26px;
-    line-height: 48px;
-    margin-top: 24px;
-    margin-bottom: 0px;
-}
-
 h4,
-.h4 {
-    font-size: 16px;
-    line-height: 24px;
-    margin-top: 24px;
-    margin-bottom: 0px;
+h5 {
+    margin: 2rem 0 1.5rem;
+    font-weight: 500;
+    line-height: 1.25;
 }
 
-h5,
-.h5 {
-    font-size: 16px;
-    line-height: 24px;
-    margin-top: 24px;
-    margin-bottom: 0px;
+h1 {
+    margin-top: 0;
+    font-size: 3.052rem;
 }
 
-p,
-ul,
-ol,
-pre,
-table,
-blockquote {
-    margin-top: 0px;
-    margin-bottom: 24px;
+h2 {
+    font-size: 2.441rem;
+}
+
+h3 {
+    font-size: 1.953rem;
+}
+
+h4 {
+    font-size: 1.563rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+small,
+.text_small {
+    font-size: 0.8rem;
 }
 
 .large-paragraph {
@@ -284,7 +272,7 @@ sub {
 a {
     text-decoration: none;
     color: initial;
-    cursor: pointer;
+    cursor: pointer !important;
 }
 
 header {
@@ -389,6 +377,7 @@ nav a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* margin-top: 24px; */
 }
 
 .footer-container {
@@ -462,8 +451,8 @@ footer {
 }
 
 .footer-banner h3 {
+    margin-top: 1.5rem;
     letter-spacing: 0.625px;
-    margin-top: 0;
 }
 
 .footer-ad {
@@ -483,14 +472,12 @@ footer {
 
 .social-icons {
     display: flex;
-    justify-content: center;
+    justify-content: right;
 }
 
 .social-icon-link {
     display: block;
     width: 48px;
-    /* margin-right: 8px; */
-    cursor: pointer !important;
 }
 
 .social-icon-link:last-child {
@@ -539,7 +526,7 @@ footer {
         height: 48px;
     }
     nav {
-        display: none;
+        /* display: none; */
         position: fixed;
         top: 0;
         bottom: 0;
@@ -560,9 +547,6 @@ footer {
         margin-right: -8px;
         margin-top: -2px;
         height: 48px;
-        /* width: 36px;
-        height: 36px; */
-        /* width: ; */
         display: block;
     }
     .nav-bar-icon {

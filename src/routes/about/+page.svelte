@@ -1,6 +1,9 @@
 <div class="header-spacer"></div>
 <div class="container">
-    <div class="text-block large-paragraph">
+    <div class="text-block">
+        <div style="margin: 32px 0; text-align: center;">
+            <a target="_blank" rel="noreferrer" href="https://apps.apple.com/gb/app/tethered-publics/id1634618407?itscg=30200&amp;itsct=apps_box_appicon" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple112/v4/eb/46/b9/eb46b9ac-8d7b-9c56-4d18-d7cdb407686f/AppIcon-1x_U007emarketing-0-7-0-85-220.png/540x540bb.jpg?h=085767d95f6f67223026827c745b7b95" alt="Tethered Publics" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a>
+        </div>
         <h1>About</h1>
         <p>Tethered Publics began with a question; how can we bring community, art and the digital together? Currently based in South London, we were looking for a way to give contemporary artists the opportunity to produce work with a focus on the cultural narratives of their own environment, and in turn, create a platform for people to discover their work.</p>
         <p>What emerged is a hybrid digital experience in which artists are given the opportunity to experiment with new technologies while producing location based digital art for people to discover through an IOS app. Allowing both artists and the public to explore and rediscover their environment through a new lens.</p>
