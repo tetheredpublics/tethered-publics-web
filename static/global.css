@@ -332,7 +332,7 @@ nav a {
     position: relative;
     justify-content: left;
     align-items: center;
-    margin-top: clamp(64px, 4vw, 80px);
+    margin-top: clamp(80px, 4vw, 80px);
 }
 
 .map-bg::before {
@@ -468,7 +468,7 @@ footer {
 }
 
 .header-spacer {
-    height: clamp(64px, 8vw, 96px);
+    height: clamp(80px, 8vw, 96px);
 }
 
 .social-icons {
@@ -527,7 +527,7 @@ footer {
     header {
         position: fixed;
         background-color: var(--tp-pink);
-        padding: 8px 16px;
+        padding: 16px 16px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.32);
         z-index: 9;
     }
