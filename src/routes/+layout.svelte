@@ -22,7 +22,7 @@
             <a on:click={toggleNav} hidden={shouldShowNav} class="nav-link" href="/">Home</a>
             <a on:click="{toggleNav}" class="nav-link" target="_blank" rel="noreferrer" href="https://apps.apple.com/gb/app/tethered-publics/id1634618407?ign-itscg=30200&ign-itsct=apps_box_link">Download</a>
             <a on:click="{toggleNav}" class="nav-link" href="./about">About</a>
-            <a on:click="{toggleNav}" class="nav-link" href="./contact">Contact</a>
+            <a on:click="{toggleNav}" class="nav-link" href="./support">Contact</a>
         </nav>
         {/if}
         <div class="nav-bar-btn">

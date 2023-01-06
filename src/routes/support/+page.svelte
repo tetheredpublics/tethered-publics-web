@@ -54,7 +54,7 @@
 <div class="header-spacer"></div>
 <div class="section">
     <div class="container" style="display: flex; flex-direction: column;">
-        <h1>Contact Us</h1>
+        <h1>Contact</h1>
         {#if form?.success}
         <!-- this message is ephemeral; it exists because the page was rendered in
             response to a form submission. it will vanish if the user reloads -->
