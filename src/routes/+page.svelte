@@ -30,9 +30,6 @@
 	fetchFeedItems()
 </script>
 
-<svelte:head>
-</svelte:head>
-
 <div class="section map-bg">
 	<div class="container hero">
 		<div class="hero-item first">
