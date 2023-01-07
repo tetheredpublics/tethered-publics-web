@@ -31,7 +31,6 @@
 </script>
 
 <svelte:head>
-	<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/968a328900896b875861998f0/0dca00fe44fc40b9ef8258f6f.js");</script>
 </svelte:head>
 
 <div class="section map-bg">
