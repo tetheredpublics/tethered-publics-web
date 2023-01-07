@@ -26,8 +26,6 @@
 		}
 		return `upcoming ${item.kind}`
 	}
-
-	fetchFeedItems()
 </script>
 
 <div class="section map-bg">
