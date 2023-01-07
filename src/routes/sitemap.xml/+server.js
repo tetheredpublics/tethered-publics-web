@@ -10,7 +10,31 @@ export async function GET() {
         xmlns:image="https://www.google.com/schemas/sitemap-image/1.1"
         xmlns:video="https://www.google.com/schemas/sitemap-video/1.1"
       >
-        <!-- <url> elements go here -->
+        <url>
+            <loc>https://tetheredpublics.app/</loc>
+            <lastmod>2023-01-07T18:55:27+00:00</lastmod>
+            <priority>1.00</priority>
+        </url>
+        <url>
+            <loc>https://tetheredpublics.app/exhibitions/TZ5LoBmnao8gVGVMo2zeKH</loc>
+            <lastmod>2023-01-07T18:55:27+00:00</lastmod>
+            <priority>0.80</priority>
+        </url>
+        <url>
+            <loc>https://tetheredpublics.app/privacy</loc>
+            <lastmod>2023-01-07T18:55:27+00:00</lastmod>
+            <priority>0.30</priority>
+        </url>
+        <url>
+            <loc>https://tetheredpublics.app/contact</loc>
+            <lastmod>2023-01-07T18:55:27+00:00</lastmod>
+            <priority>0.80</priority>
+        </url>
+        <url>
+            <loc>https://tetheredpublics.app/support</loc>
+            <lastmod>2023-01-07T18:55:27+00:00</lastmod>
+            <priority>0.80</priority>
+        </url>
       </urlset>`.trim(), {
             headers: {
                 'Content-Type': 'application/xml'
