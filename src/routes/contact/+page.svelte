@@ -4,32 +4,6 @@
 
 <svelte:head>
     <style>
-        .flex-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .flex-item {
-            flex: 1 1 0;
-            padding-right: 48px;
-            min-width: 320px;
-            max-width: 560px;
-            margin-bottom: 24px;
-        }
-
-        .flex-item:last-child {
-            padding-right: 0px;
-        }
-
-        p {
-            font-weight: 500;
-        }
-
-        @media (max-width: 600px) {
-            .flex-item {
-                padding-right: 0px;
-            }
-        }
         
     </style>
 

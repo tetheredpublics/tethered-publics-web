@@ -1,29 +1,33 @@
 <script>
-	// let feedItems = [];
+	let feedItems = [];
 
-	// function fetchFeedItems() {
-	// 	fetch("http://localhost:5173/feed.json")
-	// 		.then(data => data.json())
-	// 		.then(data => {
-	// 			console.log(data)
-	// 			feedItems = data.items
-	// 		})
-	// }
+	function fetchFeedItems() {
+		fetch("http://localhost:5173/feed.json")
+			.then(data => data.json())
+			.then(data => {
+				console.log(data)
+				feedItems = data.items
+			})
+	}
 
-	// function formatItemLabel(item) {
-	// 	let now = new Date();
-	// 	console.log(now, new Date(item.start_date))
-	// 	if (item.end_date &&  now > new Date(item.end_date)) {
-	// 		return `past ${item.kind}`
-	// 	}
-	// 	if (now > new Date(item.start_date)) {
-	// 		return `current ${item.kind}`
-	// 	}
-	// 	return `upcoming ${item.kind}`
-	// }
+	function formatItemLabel(item) {
+		let now = new Date();
+		console.log(now, new Date(item.start_date))
+		if (item.end_date &&  now > new Date(item.end_date)) {
+			return `past ${item.kind}`
+		}
+		if (now > new Date(item.start_date)) {
+			return `current ${item.kind}`
+		}
+		return `upcoming ${item.kind}`
+	}
 
-	// fetchFeedItems()
+	fetchFeedItems()
 </script>
+
+<svelte:head>
+	<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/968a328900896b875861998f0/0dca00fe44fc40b9ef8258f6f.js");</script>
+</svelte:head>
 
 <div class="section map-bg">
 	<div class="container hero">
@@ -48,13 +52,13 @@
 		</div>
 	</div>
 </div>
-<!-- <div class="section dim-bg">
+<div class="section dim-bg">
 	<div class="container">
-		<h2 style="font-weight: 500;">What's Happening?</h2>
+		<!-- <h3 style="margin-top: 0;">What's Happening?</h3> -->
 		<div class="feed-container">
 		{#each feedItems as item}
 			<div class="feed-item">
-				<a style="display: block;" href="#click">
+				<a style="display: inline-block;" href="{item.action.web_link}">
 					<div>
 						<label class="feed-item-label">{formatItemLabel(item)}</label>
 						<img 
@@ -68,4 +72,4 @@
 		{/each}
 		</div>
 	</div>
-</div> -->
+</div>

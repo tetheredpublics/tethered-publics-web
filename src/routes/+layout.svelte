@@ -21,8 +21,8 @@
         <nav hidden="{shouldShowNav}" id="main-nav">
             <a on:click={toggleNav} hidden={shouldShowNav} class="nav-link" href="/">Home</a>
             <a on:click="{toggleNav}" class="nav-link" target="_blank" rel="noreferrer" href="https://apps.apple.com/gb/app/tethered-publics/id1634618407?ign-itscg=30200&ign-itsct=apps_box_link">Download</a>
-            <a on:click="{toggleNav}" class="nav-link" href="./about">About</a>
-            <a on:click="{toggleNav}" class="nav-link" href="./contact">Contact</a>
+            <a on:click="{toggleNav}" class="nav-link" href="/about">About</a>
+            <a on:click="{toggleNav}" class="nav-link" href="/contact">Contact</a>
         </nav>
         {/if}
         <div class="nav-bar-btn">
@@ -52,8 +52,8 @@
         <div class="footer-left">
             <div class="copyright">© Tethered Publics 2022</div>
             <ul class="footer-links">
-                <li><a class="footer-link" href="./privacy">Privacy</a></li>
-                <li><a class="footer-link" href="./support">Support</a></li>
+                <li><a class="footer-link" href="/privacy">Privacy</a></li>
+                <li><a class="footer-link" href="/support">Support</a></li>
             </ul>
         </div>
         <div class="social-icons">
