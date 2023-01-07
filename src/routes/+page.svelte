@@ -1,14 +1,19 @@
 <script>
-	let feedItems = [];
-
-	function fetchFeedItems() {
-		fetch("http://localhost:5173/feed.json")
-			.then(data => data.json())
-			.then(data => {
-				console.log(data)
-				feedItems = data.items
-			})
-	}
+	let feedItems = [
+		{
+			"item_id": "TZ5LoBmnao8gVGVMo2zeKH",
+			"title": "Digitally Specific",
+			"start_date": "2022-10-07T00:18:11+00:00",
+			"end_date": null,
+			"kind": "exhibition",
+			"cover_url": "./images/digitally_specific.jpeg",
+			"action": {
+				"text": "Explore",
+				"web_link": "./exhibitions/TZ5LoBmnao8gVGVMo2zeKH",
+				"ios_link": null
+			}
+    	}
+	];
 
 	function formatItemLabel(item) {
 		let now = new Date();
