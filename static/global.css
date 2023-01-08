@@ -324,7 +324,7 @@ nav a {
 .container {
     width: 1224px;
     max-width: 100%;
-    padding: clamp(32px, 6vw, 80px) clamp(16px, 3vw, 32px);
+    padding: clamp(32px, 6vw, 80px) clamp(16px, 4vw, 48px);
     margin: auto;
 }
 
@@ -601,18 +601,17 @@ footer {
 
 .flex-item {
     flex: 1 1 0;
-    padding-right: 48px;
     min-width: 320px;
     max-width: 560px;
     margin-bottom: 24px;
 }
 
-.flex-item:last-child {
-    padding-right: 0px;
+.flex-item:first-child {
+    padding-right: 48px;
 }
 
-@media (max-width: 600px) {
-    .flex-item {
+@media (max-width: 680px) {
+    .flex-item:first-child {
         padding-right: 0px;
     }
 }
