@@ -1,7 +1,7 @@
 <script>
 	import SEO from '$lib/SEO.svelte';
 </script>
-<SEO title="About" />
+<SEO title="Open Call" description="This Open Call closed on the 20th of June 2022. Keep your eyes open for another in 2023... 👀"/>
 
 <div class="header-spacer"></div>
 <div class="container">
