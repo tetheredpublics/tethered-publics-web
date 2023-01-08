@@ -1,3 +1,8 @@
+<script>
+	import SEO from '$lib/SEO.svelte';
+</script>
+<SEO title="About" />
+
 <div class="header-spacer"></div>
 <div class="container">
     <div class="text-block">

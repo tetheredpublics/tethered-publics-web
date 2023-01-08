@@ -509,7 +509,7 @@ footer {
     font-weight: 500;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
     .feed-container {
         column-count: 2;
     }

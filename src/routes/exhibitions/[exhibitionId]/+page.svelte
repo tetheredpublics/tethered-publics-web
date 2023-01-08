@@ -1,6 +1,7 @@
 <script>
-import InlineArtistList from '../../../lib/InlineArtistList.svelte';
-import ImageGallery from '../../../lib/ImageGallery.svelte';
+import InlineArtistList from '$lib/InlineArtistList.svelte';
+import ImageGallery from '$lib/ImageGallery.svelte';
+import SEO from '$lib/SEO.svelte';
 
 /** @type {import('./$types').PageData} */
 export let data;
@@ -11,9 +12,13 @@ let exhibitionDate = new Date(data.exhibition.start_date);
 let formattedExhibitionDate = `${months[exhibitionDate.getMonth()]}, ${exhibitionDate.getFullYear()}`
 
 </script>
-<svelte:head>
-    <title>{data.exhibition.title} – Tethered Publics Exhibition</title>
+<SEO 
+    title="{data.exhibition.title} - Digital Art Exhibition"
+    description="{data.exhibition.blurb}"
+    image="{data.exhibition.images[0].url}"
+/>
 
+<svelte:head>
     <style>
         .exhibition-subtitle {
             margin-top: 1rem;
@@ -31,13 +36,7 @@ let formattedExhibitionDate = `${months[exhibitionDate.getMonth()]}, ${exhibitio
     <div class="container">
         <div class="flex-container">
             <div class="flex-item first" style="text-align: center;">
-                <!-- <img 
-                    style="max-width: 100%;" 
-                    src="{data.exhibition.cover_image.url}" 
-                    alt="{data.exhibition.title} Exhibition Poster"
-                    title="{data.exhibition.title} Exhibition Poster"
-                /> -->
-                <ImageGallery images={data.exhibition.images} />
+                <ImageGallery images={data.exhibition.images} exhibtionTitle={data.exhibition.title} />
             </div>
             <div class="flex-item">
                 <h1>{data.exhibition.title}</h1>
@@ -46,8 +45,6 @@ let formattedExhibitionDate = `${months[exhibitionDate.getMonth()]}, ${exhibitio
                     {formattedExhibitionDate}
                 </h5>
                 <p><InlineArtistList artists={data.exhibition.artists}/></p>
-
-                <!-- <h3>About</h3> -->
                 <hr/>
                 {@html data.exhibition.description}
             </div>

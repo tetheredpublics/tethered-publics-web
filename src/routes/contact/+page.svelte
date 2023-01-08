@@ -1,13 +1,9 @@
 <script>
-    import ContactForm from '../../lib/ContactForm.svelte';
+    import ContactForm from '$lib/ContactForm.svelte';
+    import SEO from '$lib/SEO.svelte';
 </script>
 
-<svelte:head>
-    <style>
-        
-    </style>
-
-</svelte:head>
+<SEO title="Contact" />
 
 <div class="header-spacer"></div>
 <div class="section">

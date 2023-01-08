@@ -1,5 +1,6 @@
 <script>
 export let images;
+export let exhibtionTitle;
 
 let currentIndex = 0;
 let totalImages = images.length;
@@ -18,6 +19,25 @@ function nextImage() {
 function prevImage() {
     currentIndex = currentIndex > 0 ? currentIndex - 1 : totalImages - 1;
 }
+
+let imageContainerWidth;
+let rootImageRatio;
+
+let rootImageWidth;
+let rootImageHeight;
+
+let getImageRatio = () => {
+    return rootImageHeight / rootImageWidth
+}
+
+function setImageRatio(e) { 
+    rootImageWidth = e.target.naturalWidth
+    rootImageHeight = e.target.naturalHeight
+    containerHeight = imageContainerWidth * getImageRatio()
+}
+
+$: containerHeight = imageContainerWidth * getImageRatio();
+
 </script>
 
 <svelte:head>
@@ -26,7 +46,13 @@ function prevImage() {
             cursor: pointer;
             margin: 0;
             max-width: 100%;
+            height: auto;
             max-height: 100%;
+            display: none;
+        }
+
+        .active-image {
+            display: inline-block;
         }
         .image-gallery {
             max-width: 100%;
@@ -39,11 +65,6 @@ function prevImage() {
             height: 640px;
         }
 
-        @media (max-width: 600px) {
-            .gallery-display {
-                height: 420px;
-            }
-        }
         label {
             font-size: 14px;
             line-height: 24px;
@@ -65,20 +86,48 @@ function prevImage() {
             opacity: 0.64;
             height: 32px;
         }
+
+        @media (max-width: 600px) {
+            .gallery-controls {
+                display: None;
+            }
+            .gallery-display {
+                /* flex-direction: column; */
+                height: auto;
+            }
+        }
     </style>
 </svelte:head>
 
 <div class="image-gallery">
-    <div class="gallery-display">
+    <div 
+        class="gallery-display" 
+        bind:clientWidth={imageContainerWidth}
+        style="height: {containerHeight}px;"
+    >
         {#each images as image, i}
-        <img 
-            class="gallery-image" 
-            on:click={nextImage} 
-            src="{image.url}"
-            loading="lazy" 
-            decoding="async"
-            style='display: {i !== currentIndex ? "none" : "block"}'
-        /> 
+        {#if i === 0}
+            <img 
+                class="gallery-image{i === currentIndex ? ' active-image' : ''}" 
+                on:click={nextImage} 
+                src="{image.url}"
+                alt="{exhibtionTitle} - {image.caption}"
+                title="{exhibtionTitle} - {image.caption}"
+                loading="lazy" 
+                decoding="async"
+                on:load={setImageRatio}
+            /> 
+        {:else}
+            <img 
+                class="gallery-image{i === currentIndex ? ' active-image' : ''}" 
+                on:click={nextImage} 
+                src="{image.url}"
+                alt="{exhibtionTitle} - {image.caption}"
+                title="{exhibtionTitle} - {image.caption}"
+                loading="lazy" 
+                decoding="async"
+            /> 
+        {/if}
         {/each}
     </div>
     <div class="flex-container gallery-controls">

@@ -2,6 +2,7 @@ let getExhibtions = () => {
     return {
         "exhibition_id": "TZ5LoBmnao8gVGVMo2zeKH",
         "title": "Digitally Specific",
+        "blurb": "An exhibition of location-based digital art, showcasing works in response to locations in the South London Boroughs of Lewisham and Southwark. Visit the mapped locations to view the art. Find hidden gems across the boroughs and experience AR, video and other audio-visual artefacts.",
         "description": "Introducing Digitally Specific, the first exhibition curated by and developed in conjunction with Tethered Publics, a mobile app for showcasing location based digital art.\r\n\r\nDigitally Specific is an artist-led exhibition which investigates ways of challenging contemporary notions of place, community and technology through the production and installation of site-specific digital artworks. Through augmented reality, video, code and geolocation technology, we invite you to delve into this hybrid experience of art and place. \r\n\r\nThe works of this show are exhibited in-app across the South London boroughs of Lewisham and Southwark, spotlighting contemporary artists working in the area. Looking to explore tensions between the ‘assimilative’ and ‘interruptive’ elements of site-specific art, Digitally Specific embellishes the streets, rather than gallery walls. The show aims to be at once harmonious, subversive and inclusive, and present a unique way to explore art and your environment.\r\n\r\nAbout Tethered Publics: \r\n\r\nTethered Publics is a platform for exploring location based digital art. Via its mobile app, it allows artists to exhibit their work through augmented reality, digital media and geolocation technology. Bypassing the confines and physicality of the traditional gallery, the Tethered Publics concept is simple - download the app to view art created in response to spaces near you. This innovative in-app viewing experience allows people to seek out artworks, or be notified when work is close by. Allowing people to curate their own art trail, or simply encounter art along their regular journeys. \r\n\r\nAcknowledgements:\r\n\r\nThis exhibition has been produced independently without external funding. Thanks goes to the artists involved for their collaboration and their contribution to the development of the app as a whole.",
         "start_date": "2022-10-07T00:18:11+00:00",
         "cover_image": {
@@ -107,9 +108,6 @@ export async function load({ params }) {
         .join("</p>\n<p>") +
         "</p>";
     exhibition.description = paragraphs;
-
-    console.log(paragraphs)
-        // todo: load from api
     return {
         exhibition: exhibition
     };

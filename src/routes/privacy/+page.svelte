@@ -1,3 +1,7 @@
+<script>
+	import SEO from '$lib/SEO.svelte';
+</script>
+<SEO title="Privacy Policy" />
 <style>ul { padding-left: 24px !important;}</style>
 <div class="header-spacer"></div>
 <div class="container">

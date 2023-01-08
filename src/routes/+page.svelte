@@ -1,4 +1,6 @@
 <script>
+	import SEO from '$lib/SEO.svelte';
+
 	let feedItems = [
 		{
 			"item_id": "TZ5LoBmnao8gVGVMo2zeKH",
@@ -27,6 +29,7 @@
 		return `upcoming ${item.kind}`
 	}
 </script>
+<SEO title="Location-Based Digital Art" />
 
 <div class="section map-bg">
 	<div class="container hero">

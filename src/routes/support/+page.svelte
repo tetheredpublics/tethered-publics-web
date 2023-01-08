@@ -1,6 +1,11 @@
 <script>
-    import ContactForm from '../../lib/ContactForm.svelte';
+    import ContactForm from '$lib/ContactForm.svelte';
+    import SEO from '$lib/SEO.svelte';
 </script>
+<SEO 
+    title="Support" 
+    description="Contact our app support to report any problems, bugs or improvements."
+/>
 
 <div class="header-spacer"></div>
 <div class="section">
