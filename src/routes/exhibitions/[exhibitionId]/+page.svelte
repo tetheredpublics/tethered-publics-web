@@ -91,7 +91,7 @@ let formattedExhibitionDate = `${months[exhibitionDate.getMonth()]}, ${exhibitio
                         loading="lazy" 
                         decoding="async"
                     /> 
-                    <label class="image-label" style="padding: 8px 0;">{image.caption}</label>
+                    <label class="image-label" style="padding: 4px 0;">{image.caption}</label>
                 </div>
                 {/each}
             </div>
