@@ -1,9 +1,8 @@
-import { TP_CHEATCODE_API_URL, TP_CHEATCODE_API_KEY } from '$env/static/private'
+import { TP_CHEATCODE_API_KEY, TP_CHEATCODE_API_URL } from '$env/static/private'
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ cookies }) {
     let tpCheatCode = cookies.get('tpCheatCode');
-    console.log(tpCheatCode)
     return { code: tpCheatCode };
 }
 
