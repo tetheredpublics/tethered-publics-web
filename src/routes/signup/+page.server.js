@@ -1,4 +1,4 @@
-import { MAILCHIMP_KEY, MAILCHIMP_BASE_URL, MAILCHIMP_LIST_ID } from '$env/static/private'
+import { env } from '$env/static/private'
 
 
 /** @type {import('./$types').Actions} */
@@ -18,12 +18,12 @@ export const actions = {
         }
 
         const response = await fetch(
-            `${MAILCHIMP_BASE_URL}/lists/${MAILCHIMP_LIST_ID}/members`,
+            `${env.MAILCHIMP_BASE_URL}/lists/${env.MAILCHIMP_LIST_ID}/members`,
             {
                 method: 'POST',
                 headers: { 
                     "Content-Type": "application/json",
-                    'Authorization': `Basic ${btoa(`key:${MAILCHIMP_KEY}`)}`
+                    'Authorization': `Basic ${btoa(`key:${env.MAILCHIMP_KEY}`)}`
                 },
                 body: JSON.stringify({
                     "email_address": subscriberEmail,
