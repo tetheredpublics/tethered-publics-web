@@ -1,4 +1,4 @@
-import { env } from '$env/static/private'
+import { env } from '$env/dynamic/private'
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ cookies }) {
