@@ -1,8 +1,4 @@
-import { TP_CHEATCODE_API_KEY } from '$env/static/private'
-
-
-const TP_CHEATCODE_API_URL = "https://gduu1c.deta.dev/api/1/cheatcode"
-
+import { env } from '$env/dynamic/private'
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ cookies }) {
@@ -17,12 +13,12 @@ export const actions = {
         const email = data.get('email');
 
         const response = await fetch(
-            TP_CHEATCODE_API_URL, {
+            env.TP_CHEATCODE_API_URL, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     "email": email,
-                    "token": TP_CHEATCODE_API_KEY,
+                    "token": env.TP_CHEATCODE_API_KEY,
                 })
             }
         )
