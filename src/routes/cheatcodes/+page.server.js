@@ -27,8 +27,8 @@ export const actions = {
         }
 
         let codeData = await response.json()
-        // cookies.set('tpCheatCode', codeData.code);
-        console.log("worked")
+        cookies.set('tpCheatCode', codeData.code);
+
         return { success: true };
     }
 };
