@@ -1,4 +1,4 @@
-import { env } from '$env/dynamic/private'
+import { TP_CHEATCODE_API_URL, TP_CHEATCODE_API_KEY } from '$env/static/private'
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ cookies }) {
@@ -13,12 +13,12 @@ export const actions = {
         const email = data.get('email');
 
         const response = await fetch(
-            env.TP_CHEATCODE_API_URL, {
+            TP_CHEATCODE_API_URL, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     "email": email,
-                    "token": env.TP_CHEATCODE_API_KEY,
+                    "token": TP_CHEATCODE_API_KEY,
                 })
             }
         )
@@ -27,8 +27,8 @@ export const actions = {
         }
 
         let codeData = await response.json()
-        cookies.set('tpCheatCode', codeData.code);
-
+        // cookies.set('tpCheatCode', codeData.code);
+        console.log("worked")
         return { success: true };
     }
 };
