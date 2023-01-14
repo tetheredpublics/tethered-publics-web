@@ -1,4 +1,8 @@
-import { TP_CHEATCODE_API_KEY, TP_CHEATCODE_API_URL } from '$env/static/private'
+import { TP_CHEATCODE_API_KEY } from '$env/static/private'
+
+
+const TP_CHEATCODE_API_URL = "https://gduu1c.deta.dev/api/1/cheatcode"
+
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ cookies }) {
