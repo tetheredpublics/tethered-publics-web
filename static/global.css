@@ -392,6 +392,7 @@ nav a {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
 }
 
 footer {
@@ -459,7 +460,7 @@ footer {
     letter-spacing: 0.625px;
 }
 
-.footer-ad {
+.footer-message {
     margin-bottom: 24px;
 }
 
@@ -515,7 +516,10 @@ footer {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 660px) {
+    .flex-container {
+        display: block !important;
+    }
     .feed-container {
         column-count: 1;
     }

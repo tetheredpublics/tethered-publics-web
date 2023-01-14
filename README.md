@@ -44,3 +44,7 @@ You can preview the production build with `npm run preview`.
 ## Forms
 https://www.staticforms.xyz/
 https://app.netlify.com/sites/playful-beijinho-c8ecbd/forms
+
+
+# Email signups
+https://mailchimp.com/developer/marketing/guides/create-your-first-audience/

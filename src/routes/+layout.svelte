@@ -1,8 +1,12 @@
 <script>
+    /** @type {import('./$types').ActionData} */
+    export let form;
+
+    import SignupForm from '$lib/SignupForm.svelte';
     export let mobileNavVisable = false;
 
     let innerWidth = 0
-    let mobileViewPortSize = 600
+    let mobileViewPortSize = 660
 
     function toggleNav() {
         mobileNavVisable = !mobileNavVisable
@@ -40,13 +44,19 @@
 <slot></slot>
 
 <footer>
+
     <div class="footer-banner">
-        <div class="footer-ad">
-            <h3>Download Tethered Publics to View the Art!</h3>
+        <div class="flex-container" style="flex-wrap: nowrap;">
+            <SignupForm form={form}/>
+            <div>
+                <div class="footer-message">
+                    <h4>Download Tethered Publics to View the Art!</h4>
+                </div>
+                <a href="https://apps.apple.com/gb/app/tethered-publics/id1634618407?itsct=apps_box_badge&amp;itscg=30200" style="display: inline-block; overflow: hidden; height: 48px;">
+                    <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/white/en-us?size=250x83&amp;releaseDate=1665100800?h=dcb22a6433c4aa556ff0d7bccb6ba928" alt="Download on the App Store" style="height: 48px;">
+                </a>
+            </div>
         </div>
-        <a href="https://apps.apple.com/gb/app/tethered-publics/id1634618407?itsct=apps_box_badge&amp;itscg=30200" style="display: inline-block; overflow: hidden; height: 48px;">
-            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/white/en-us?size=250x83&amp;releaseDate=1665100800?h=dcb22a6433c4aa556ff0d7bccb6ba928" alt="Download on the App Store" style="height: 48px;">
-        </a>
     </div>
     <div class="footer-container">
         <div class="footer-left">

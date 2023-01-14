@@ -28,7 +28,7 @@
         input, textarea {
             display: block;
             width: 100%;
-            padding: 8px;
+            padding: 12px;
             font: inherit;
             line-height: 1.5rem;
             border-radius: 6px;
@@ -50,6 +50,7 @@
             letter-spacing: 1.5px;
             font-weight: bold;
             margin-bottom: 1.5rem;
+            text-transform: uppercase;
         }
 
         .section {

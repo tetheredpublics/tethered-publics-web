@@ -19,7 +19,6 @@
 
 	function formatItemLabel(item) {
 		let now = new Date();
-		console.log(now, new Date(item.start_date))
 		if (item.end_date &&  now > new Date(item.end_date)) {
 			return `past ${item.kind}`
 		}
@@ -37,10 +36,10 @@
 			<img class="hero-img" src="./images/iphone12caseshotmap.png"/>
 		</div>
 		<div class="hero-item">
-			<h1>Location-Based Digital Art. Just Launched in South London</h1>
+			<h1 style="font-weight: 600;">Explore Location-Based Digital Art.</h1>
 			<p class="large-paragraph">
-				We're exhibiting site-specific digital artworks. See our first exhibition Digitally
-				Specific. Now available for Download.
+				Art app exhibiting site-specific digital artworks. Now available for download on IOS. 
+				See our first exhibition Digitally Specific.
 			</p>
 			<a
 				href="https://apps.apple.com/gb/app/tethered-publics/id1634618407?itsct=apps_box_badge&amp;itscg=30200"
@@ -56,13 +55,13 @@
 </div>
 <div class="section dim-bg">
 	<div class="container">
-		<!-- <h3 style="margin-top: 0;">What's Happening?</h3> -->
+		<!-- <h1 style="margin-top: 0;">Whats Happening</h1> -->
 		<div class="feed-container">
 		{#each feedItems as item}
 			<div class="feed-item">
 				<a style="display: inline-block;" href="{item.action.web_link}">
 					<div>
-						<label class="feed-item-label">{formatItemLabel(item)}</label>
+						<label style="padding: 4px 0;" class="feed-item-label">{formatItemLabel(item)}</label>
 						<img 
 							class="feed-item-img" 
 							src="{item.cover_url}" 
