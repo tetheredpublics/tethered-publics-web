@@ -1,22 +1,23 @@
 <script>
+    import { PUBLIC_TP_APP_URL } from '$env/static/public';
+    import SignupForm from '$lib/SignupForm.svelte';
+
     /** @type {import('./$types').ActionData} */
     export let form;
-
-    import SignupForm from '$lib/SignupForm.svelte';
     export let mobileNavVisable = false;
 
-    let innerWidth = 0
+    let windowInnerWidth = 0;
     let mobileViewPortSize = 660
 
     function toggleNav() {
         mobileNavVisable = !mobileNavVisable
     }
 
-    $: shouldShowNav = innerWidth > mobileViewPortSize || mobileNavVisable
+    $: shouldShowNav = windowInnerWidth > mobileViewPortSize || mobileNavVisable
 
 </script>
 
-<svelte:window bind:innerWidth />
+<svelte:window bind:innerWidth={windowInnerWidth} />
 
 <header>
     <div class="header-container">
@@ -24,7 +25,12 @@
         {#if shouldShowNav}
         <nav hidden="{shouldShowNav}" id="main-nav">
             <a on:click={toggleNav} hidden={shouldShowNav} class="nav-link" href="/">Home</a>
-            <a on:click="{toggleNav}" class="nav-link" target="_blank" rel="noreferrer" href="https://apps.apple.com/gb/app/tethered-publics/id1634618407?ign-itscg=30200&ign-itsct=apps_box_link">Download</a>
+            <a on:click="{toggleNav}" 
+                class="nav-link" 
+                target="_blank" 
+                rel="noreferrer" 
+                href="{PUBLIC_TP_APP_URL}"
+            >Download</a>
             <a on:click="{toggleNav}" class="nav-link" href="/about">About</a>
             <a on:click="{toggleNav}" class="nav-link" href="/contact">Contact</a>
         </nav>

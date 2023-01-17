@@ -1,21 +1,8 @@
 <script>
 	import SEO from '$lib/SEO.svelte';
 
-	let feedItems = [
-		{
-			"item_id": "TZ5LoBmnao8gVGVMo2zeKH",
-			"title": "Digitally Specific",
-			"start_date": "2022-10-07T00:18:11+00:00",
-			"end_date": null,
-			"kind": "exhibition",
-			"cover_url": "./images/digitally_specific.jpeg",
-			"action": {
-				"text": "Explore",
-				"web_link": "./exhibitions/TZ5LoBmnao8gVGVMo2zeKH",
-				"ios_link": null
-			}
-    	}
-	];
+	/** @type {import('./$types').PageData} */
+	export let data;
 
 	function formatItemLabel(item) {
 		let now = new Date();
@@ -53,18 +40,19 @@
 		</div>
 	</div>
 </div>
+{#if data?.feedItems}
 <div class="section dim-bg">
 	<div class="container">
 		<!-- <h1 style="margin-top: 0;">Whats Happening</h1> -->
 		<div class="feed-container">
-		{#each feedItems as item}
+		{#each data.feedItems as item}
 			<div class="feed-item">
 				<a style="display: inline-block;" href="{item.action.web_link}">
 					<div>
 						<label style="padding: 4px 0;" class="feed-item-label">{formatItemLabel(item)}</label>
 						<img 
 							class="feed-item-img" 
-							src="{item.cover_url}" 
+							src="{item.poster_image_url}" 
 							title="{item.title}" alt="{item.title} - poster"
 						/>
 					</div>
@@ -74,3 +62,4 @@
 		</div>
 	</div>
 </div>
+{/if}

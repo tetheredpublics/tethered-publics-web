@@ -2,6 +2,7 @@
 import InlineArtistList from '$lib/InlineArtistList.svelte';
 import ImageGallery from '$lib/ImageGallery.svelte';
 import SEO from '$lib/SEO.svelte';
+import { PUBLIC_TP_APP_URL } from '$env/static/public';
 
 /** @type {import('./$types').PageData} */
 export let data;
@@ -11,6 +12,12 @@ let exhibitionDate = new Date(data.exhibition.start_date);
 
 let formattedExhibitionDate = `${months[exhibitionDate.getMonth()]}, ${exhibitionDate.getFullYear()}`
 
+let scrollPosition;
+let mainContainerHeight;
+let currentWindowHeight
+let spacerHeight;
+
+$: buttonPosition = scrollPosition + currentWindowHeight - spacerHeight > mainContainerHeight ? "absolute" : "fixed";
 </script>
 <SEO 
     title="{data.exhibition.title} - Digital Art Exhibition"
@@ -27,7 +34,7 @@ let formattedExhibitionDate = `${months[exhibitionDate.getMonth()]}, ${exhibitio
 
         hr {
             margin: 2.5rem 0;
-            opacity: 0.64;
+            opacity: 0.5;
         }
 
         .mobile-feed, .mobile-poster {
@@ -54,8 +61,10 @@ let formattedExhibitionDate = `${months[exhibitionDate.getMonth()]}, ${exhibitio
 
     </style>
 </svelte:head>
-<div class="header-spacer"/>
-<div class="section">
+<svelte:window bind:innerHeight={currentWindowHeight} bind:scrollY={scrollPosition} />
+
+<div class="header-spacer" bind:clientHeight={spacerHeight} />
+<div class="section" bind:clientHeight={mainContainerHeight}>
     <div class="container">
         <div class="flex-container">
             <div class="flex-item" style="text-align: center;">
@@ -76,9 +85,12 @@ let formattedExhibitionDate = `${months[exhibitionDate.getMonth()]}, ${exhibitio
                     <InlineArtistList artists={data.exhibition.curators}/>
                     {formattedExhibitionDate}
                 </h5>
-                <p><InlineArtistList artists={data.exhibition.artists}/></p>
+                <p style="marging-bottom: 2rem;"><InlineArtistList artists={data.exhibition.artists}/></p>
                 <hr/>
                 {@html data.exhibition.description}
+                <a style="display: inline-block;" href="{PUBLIC_TP_APP_URL}" target="_blank" rel="noreferrer">
+                    <button style="position: {buttonPosition};" class="action-button light">View in-App</button>
+                </a>
             </div>
             <div class="flex-item mobile-feed">
                 {#each data.exhibition.images.slice(1) as image}

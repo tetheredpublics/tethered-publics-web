@@ -58,13 +58,14 @@
 {#if form?.success}
 <h1>Thanks for all the fish!</h1>
 <p>You can unsubscribe at anytime. Unsubscribe button at the bottom of every email</p>
-<p><a style="text-decoration: underline;" href="/cheatcodes">Redeem your free cheat code</a></p>
+<!-- <p><a style="text-decoration: underline;" href="/cheatcodes">Redeem your free cheat code</a></p> -->
 {:else}
 <div class="signup-container">
     <h4 class="signup-header">Join our Mailing List 🙌</h4>
     <p style="max-width: 480px;">
         Don't miss out on exhibitions, open calls and other opportunities. 
-        100% good stuff, zero spam. Opt out at any time. Limited offer: Get a free cheat code to access art anywhere.
+        100% good stuff, zero spam. Opt out at any time. 
+        <!-- Limited offer: Get a free cheat code to access art anywhere. -->
     </p>
     <form method="POST" action="/signup">
         <fieldset class="signup-fieldset">

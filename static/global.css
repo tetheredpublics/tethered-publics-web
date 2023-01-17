@@ -155,6 +155,7 @@ table {
     --space-l: 32px;
     --space-xl: 48px;
     --space-xxl: 64px;
+    --global-margin: clamp(16px, 4vw, 48px);
 }
 
 .dim-bg {
@@ -508,6 +509,36 @@ footer {
     width: fit-content;
     padding: 8px;
     font-weight: 500;
+}
+
+.action-button {
+    display: block;
+    border: none;
+    background-color: var(--tp-pink-dim);
+    text-transform: uppercase;
+    padding: 11px 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    line-height: 1.5rem;
+    letter-spacing: 1px;
+    font-weight: bold;
+    white-space: nowrap;
+    /* margin-bottom: 1.5rem; */
+}
+
+.action-button.light {
+    background-color: var(--tp-pink-dim);
+    border: 1px solid #000;
+    color: #000;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: clamp(16px, 3vw, 32px);
+}
+
+.action-button.dark {
+    color: #fff;
+    background-color: #000;
 }
 
 @media (max-width: 900px) {
