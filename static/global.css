@@ -530,6 +530,9 @@ footer {
     background-color: var(--tp-pink-dim);
     border: 1px solid #000;
     color: #000;
+}
+
+.fixed-btn {
     position: fixed;
     bottom: 0;
     right: 0;

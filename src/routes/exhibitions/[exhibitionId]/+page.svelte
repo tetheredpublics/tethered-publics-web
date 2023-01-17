@@ -89,7 +89,7 @@ $: buttonPosition = scrollPosition + currentWindowHeight - spacerHeight > mainCo
                 <hr/>
                 {@html data.exhibition.description}
                 <a style="display: inline-block;" href="{PUBLIC_TP_APP_URL}" target="_blank" rel="noreferrer">
-                    <button style="position: {buttonPosition};" class="action-button light">View in-App</button>
+                    <button style="position: {buttonPosition};" class="action-button light fixed-btn">View in-App</button>
                 </a>
             </div>
             <div class="flex-item mobile-feed">
