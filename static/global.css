@@ -476,6 +476,10 @@ footer {
     height: clamp(80px, 8vw, 96px);
 }
 
+.spacer {
+    height: clamp(64px, 6vw, 80px);
+}
+
 .social-icons {
     display: flex;
     justify-content: right;
@@ -523,6 +527,7 @@ footer {
     letter-spacing: 1px;
     font-weight: bold;
     white-space: nowrap;
+    z-index: 8;
     /* margin-bottom: 1.5rem; */
 }
 

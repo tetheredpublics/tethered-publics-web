@@ -116,5 +116,6 @@ let imagesForWebGallery = [
                 {/each}
             </div>
         </div>
+        <div class="spacer"></div>
     </div>
 </div>
