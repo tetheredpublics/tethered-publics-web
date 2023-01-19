@@ -1,5 +1,23 @@
 import { TP_ART_API_URL, TP_ART_API_KEY } from '$env/static/private';
 
+const tempFeedItems = [{
+    "item_id": "None",
+    "title": "Home Collection 2023",
+    "start_date": "2022-01-16T00:18:11+00:00",
+    "end_date": null,
+    "kind": "opportunity",
+    "poster_image_url": "./images/opencall-posterb-v1.jpg",
+    "action": {
+        "text": "Apply",
+        "web_link": "/opportunities/home-collection-open-call",
+        "ios_link": null
+    }
+}]
+
+function applyTempFeedItems(feed) {
+    console.log(feed)
+    return tempFeedItems.concat(feed);
+}
 
 async function fetchFeed() {
     const response = await fetch(
@@ -16,7 +34,7 @@ async function fetchFeed() {
         throw new Error(message);
     }
     const feed = await response.json();
-    return { feedItems: feed.items };
+    return { feedItems: applyTempFeedItems(feed.items) };
 }
 
 /** @type {import('./$types').PageServerLoad} */
