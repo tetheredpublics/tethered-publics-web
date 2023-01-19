@@ -18,11 +18,19 @@ let currentWindowHeight
 let spacerHeight;
 
 $: buttonPosition = scrollPosition + currentWindowHeight - spacerHeight > mainContainerHeight ? "absolute" : "fixed";
+
+let imagesForWebGallery = [
+    {url: data.exhibition.cover_image_url, caption: `${data.exhibition.title} - poster`}
+].concat(data.exhibition.images);
+
+// data.exhibition.images;
+
+// console.log(JSON.stringify(imagesForWebGallery))
 </script>
 <SEO 
     title="{data.exhibition.title} - Digital Art Exhibition"
     description="{data.exhibition.blurb}"
-    image="{data.exhibition.images[0].url}"
+    image="{data.exhibition.cover_image_url}"
 />
 
 <svelte:head>
@@ -70,14 +78,14 @@ $: buttonPosition = scrollPosition + currentWindowHeight - spacerHeight > mainCo
             <div class="flex-item" style="text-align: center;">
                 <div class="mobile-poster">
                     <img 
-                        src="{data.exhibition.cover_image.url}"
-                        alt="{data.exhibition.title} - {data.exhibition.cover_image.caption}"
-                        title="{data.exhibition.title} - {data.exhibition.cover_image.caption}"
+                        src="{data.exhibition.cover_image_url}"
+                        alt="{data.exhibition.title} - poster"
+                        title="{data.exhibition.title} - poster"
                         loading="lazy" 
                         decoding="async"
                     /> 
                 </div>
-                <ImageGallery images={data.exhibition.images} exhibtionTitle={data.exhibition.title} />
+                <ImageGallery images={imagesForWebGallery} exhibtionTitle={data.exhibition.title} />
             </div>
             <div class="flex-item">
                 <h1>{data.exhibition.title}</h1>
@@ -93,7 +101,7 @@ $: buttonPosition = scrollPosition + currentWindowHeight - spacerHeight > mainCo
                 </a>
             </div>
             <div class="flex-item mobile-feed">
-                {#each data.exhibition.images.slice(1) as image}
+                {#each data.exhibition.images as image}
                 <div class="mobile-feed-image">
                     <img 
                         style="display: block;"
