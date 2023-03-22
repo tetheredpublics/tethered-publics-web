@@ -8,12 +8,15 @@
         "role": "poster",
         "caption": ""
     },
-    "curators": [{
-        "full_name": "Tethered Publics",
-        "website": "https://tetheredpublics.app",
-        "instagram": ""
-    }],
-    "artists": [{
+    "curators": [
+        {
+            "full_name": "Tethered Publics",
+            "website": "https://tetheredpublics.app",
+            "instagram": ""
+        }
+    ],
+    "artists": [
+        {
             "full_name": "Karl Sims",
             "website": "https://karlsims.uk",
             "instagram": "winston_jay"
@@ -59,7 +62,8 @@
             "instagram": "bob.bk1"
         }
     ],
-    "images": [{
+    "images": [
+        {
             "url": "https://d34okymurzabo0.cloudfront.net/images/m256rGgK6kqJCiUsTDiv57-gK3Ah3WREK8Q4Kc3qo6BoF-digitallyspecificposter-45.jpeg",
             "role": "poster",
             "caption": ""

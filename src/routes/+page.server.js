@@ -4,7 +4,7 @@ const tempFeedItems = [{
     "item_id": "None",
     "title": "Home Collection 2023",
     "start_date": "2022-01-16T00:18:11+00:00",
-    "end_date": null,
+    "end_date": "2023-03-13T00:00:00+00:00",
     "kind": "opportunity",
     "poster_image_url": "./images/opencall-posterb-v1.jpg",
     "action": {
@@ -15,19 +15,18 @@ const tempFeedItems = [{
 }]
 
 function applyTempFeedItems(feed) {
-    console.log(feed)
     return tempFeedItems.concat(feed);
 }
 
 async function fetchFeed() {
     const response = await fetch(
         `${TP_ART_API_URL}/v1.2/feed`, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-                "x-api-key": TP_ART_API_KEY,
-            },
-        }
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "x-api-key": TP_ART_API_KEY,
+        },
+    }
     );
     if (!response.ok) {
         const message = `An error has occured: ${response.status}`;
