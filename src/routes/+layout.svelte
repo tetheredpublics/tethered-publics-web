@@ -24,9 +24,7 @@
 		{#if shouldShowNav}
 			<nav hidden={shouldShowNav} id="main-nav">
 				<a on:click={toggleNav} hidden={shouldShowNav} class="nav-link" href="/">Home</a>
-				<a on:click={toggleNav} class="nav-link" target="_blank" rel="noreferrer" href="/download"
-					>Download</a
-				>
+				<a on:click={toggleNav} class="nav-link" href="/download">Download</a>
 				<a on:click={toggleNav} class="nav-link" href="/about">About</a>
 				<a on:click={toggleNav} class="nav-link" href="/contact">Contact</a>
 			</nav>
