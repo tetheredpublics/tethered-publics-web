@@ -53,7 +53,7 @@
 				alt="IOS QR code downlaod link"
 				src="/images/ios-qr-code.jpeg"
 			/>
-			<p>Scan the QR code to link to the download</p>
+			<p>Scan the QR code to open on your iPhone</p>
 		</div>
 		<div class="flex-item">
 			<h1>Google Play</h1>
