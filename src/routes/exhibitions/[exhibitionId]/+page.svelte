@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
 	import InlineArtistList from '$lib/InlineArtistList.svelte';
 	import ImageGallery from '$lib/ImageGallery.svelte';
 	import SEO from '$lib/SEO.svelte';
@@ -37,13 +39,7 @@
 			? 'absolute'
 			: 'fixed';
 
-	let imagesForWebGallery = [
-		{ url: data.exhibition.cover_image_url, caption: `${data.exhibition.title} - poster` }
-	].concat(data.exhibition.images);
-
-	// data.exhibition.images;
-
-	// console.log(JSON.stringify(imagesForWebGallery))
+	let poster = data.exhibition.images.find(x => x.role == 'poster')
 </script>
 
 <SEO
@@ -54,14 +50,17 @@
 
 <svelte:head>
 	<style>
+
+		.exhibition-title {
+			font-weight: 600;
+		}
 		.exhibition-subtitle {
-			margin-top: 1rem;
+			/* margin-top: 1rem; */
 			opacity: 0.64;
 		}
 
 		hr {
-			margin: 2.5rem 0;
-			opacity: 0.5;
+			margin: 0 0 2.5rem 0;
 		}
 
 		.mobile-feed,
@@ -81,41 +80,52 @@
 		}
 
 		.image-label {
-			font-size: 14px;
+			font-size: 13px;
 			line-height: 24px;
 			display: block;
-			opacity: 0.64;
+			opacity: 0.5;
 			text-align: left;
+		}
+		.display-img {
+			display: block;
 		}
 	</style>
 </svelte:head>
 <svelte:window bind:innerHeight={currentWindowHeight} bind:scrollY={scrollPosition} />
 
+<!-- var now = new Date().valueOf();
+setTimeout(function () {
+    if (new Date().valueOf() - now > 100) return;
+    window.location = "https://itunes.apple.com/appdir";
+}, 25);
+window.location = "appname://"; -->
+
 <div class="header-spacer" bind:clientHeight={spacerHeight} />
 <div class="section" bind:clientHeight={mainContainerHeight}>
 	<div class="container">
 		<div class="flex-container">
-			<div class="flex-item" style="text-align: center;">
-				<div class="mobile-poster">
-					<img
-						src={data.exhibition.cover_image_url}
-						alt="{data.exhibition.title} - poster"
-						title="{data.exhibition.title} - poster"
-						loading="lazy"
-						decoding="async"
-					/>
-				</div>
-				<ImageGallery images={imagesForWebGallery} exhibtionTitle={data.exhibition.title} />
+			<div class="flex-item">
+				<img
+					src={poster.uri}
+					alt="{data.exhibition.title} - {poster.label}"
+					title="{data.exhibition.title} - {poster.label}"
+					class="display-img"
+					loading="lazy"
+					decoding="async"
+				/>
+				<span class="image-label">{data.exhibition.title}: {poster.label}</span>
 			</div>
 			<div class="flex-item">
-				<h1>{data.exhibition.title}</h1>
+				<h1 class="exhibition-title">{data.exhibition.title}</h1>
 				<h5 class="exhibition-subtitle">
-					<InlineArtistList artists={data.exhibition.curators} />
+					<InlineArtistList artists={data.exhibition.curators} showsHover={false} />.
 					{formattedExhibitionDate}
 				</h5>
-				<p style="marging-bottom: 2rem;"><InlineArtistList artists={data.exhibition.artists} /></p>
+				<p style="columns: 3; margin-bottom: 2rem"><InlineArtistList artists={data.exhibition.artists} /></p>
 				<hr />
-				{@html data.exhibition.description}
+				{#each data.exhibition.description as paragraph}
+					<p>{paragraph}</p>
+				{/each}
 				<a style="display: inline-block;" href="/download" target="_blank" rel="noreferrer">
 					<button style="position: {buttonPosition};" class="action-button light fixed-btn"
 						>View in-App</button
@@ -123,11 +133,11 @@
 				</a>
 			</div>
 			<div class="flex-item mobile-feed">
-				{#each data.exhibition.images as image}
+				<!-- {#each data.exhibition.images as image}
 					<div class="mobile-feed-image">
 						<img
 							style="display: block;"
-							src={image.url}
+							src={image.uri}
 							alt="{data.exhibition.title} - {image.caption}"
 							title="{data.exhibition.title} - {image.caption}"
 							loading="lazy"
@@ -135,7 +145,7 @@
 						/>
 						<label class="image-label" style="padding: 4px 0;">{image.caption}</label>
 					</div>
-				{/each}
+				{/each} -->
 			</div>
 		</div>
 		<div class="spacer" />

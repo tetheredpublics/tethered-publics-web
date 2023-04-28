@@ -16,10 +16,11 @@
 		return `upcoming ${item.kind}`;
 	}
 	let heroImages = [
+		'/images/homescreen.png',
 		'/images/iphone-12-shot-greg.png',
-		'/images/iphone-12-shot-map.png',
-		'/images/iphone-12-to.png',
-		'/images/iphone-12-at.png'
+		'/images/map-view.png',
+		'/images/location-view.png',
+		'/images/dragon-fish.png'
 	];
 	let heroImageIndex = 0;
 	let nextHeroImageIndex = 1;
@@ -69,14 +70,14 @@
 				<!-- svelte-ignore a11y-missing-attribute -->
 				<img
 					on:click={clickNextImage}
-					style="position: absolute; top: 0; left: 0; right: 0; opacity: {nextOpacity};"
+					style="position: absolute; top: 0; left: 0; right: 0; filter: none; -webkit-filter: none; opacity: {nextOpacity};"
 					class="hero-img"
 					src={heroImage}
 				/>
 			</div>
 		</div>
 		<div class="hero-item">
-			<h1 style="font-weight: 600;">Explore Location-Based Digital Art.</h1>
+			<h1 style="font-weight: 600;">Discover Reality Blending Digital Art!</h1>
 			<p class="large-paragraph">
 				Art app exhibiting site-specific digital artworks. Now available for download on IOS. See
 				our first exhibition Digitally Specific today.
@@ -102,8 +103,8 @@
 						<a style="display: inline-block;" href={item.action.web_link}>
 							<div>
 								<!-- svelte-ignore a11y-label-has-associated-control -->
-								<label style="padding: 4px 0;" class="feed-item-label"
-									>{formatItemLabel(item)}</label
+								<span class="feed-item-label"
+									>{formatItemLabel(item)}</span
 								>
 								<img
 									class="feed-item-img"

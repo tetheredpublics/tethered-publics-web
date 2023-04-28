@@ -186,7 +186,7 @@ body,
 
 p {
     margin-bottom: 1.5rem;
-    line-height: 1.5;
+    line-height: 1.6;
     font-weight: 500;
     opacity: 0.84;
 }
@@ -204,6 +204,7 @@ h5 {
 h1 {
     margin-top: 0;
     font-size: 3.052rem;
+    font-weight: 600;
 }
 
 h2 {
@@ -251,6 +252,7 @@ hr,
 .hr {
     border: 1px solid;
     margin: -1px 0 1.5rem 0;
+    opacity: 0.32;
 }
 
 b,
@@ -341,6 +343,8 @@ nav a {
     justify-content: left;
     align-items: center;
     margin-top: clamp(80px, 4vw, 80px);
+    overflow: hidden;
+    max-width: 100%;
 }
 
 .map-bg::before {
@@ -356,12 +360,15 @@ nav a {
     position: absolute;
     opacity: 0.08;
     overflow: hidden;
+    animation: warp 20s infinite;
 }
 
 .hero-img {
     max-height: 560px;
     display: block;
     margin: auto;
+    -webkit-filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.16));
+    filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.16));
 }
 
 .hero-item {
@@ -579,6 +586,9 @@ footer {
     h1.logo {
         font-size: 24px;
     }
+    .exhibtion-title {
+        font-weight: 900;
+    }
     header {
         position: fixed;
         background-color: var(--tp-pink);
@@ -658,3 +668,31 @@ footer {
         padding-right: 0px;
     }
 }
+
+.img-caption {
+    font-size: 12px;
+    display: block;
+}
+
+@keyframes warp {
+    0% {
+      /* transform: scale(1) skew(-5deg, 0deg); */
+      filter: blur(2px) contrast(100%);
+    }
+    25% {
+      /* transform: scale(1.02) skew(0deg, 5deg); */
+      filter: blur(0px) contrast(110%);
+    }
+    50% {
+      /* transform: scale(1) skew(5deg, 0deg); */
+      filter: blur(2px) contrast(100%);
+    }
+    75% {
+      /* transform: scale(1.02) skew(0deg, -5deg); */
+      filter: blur(0px) contrast(90%);
+    }
+    100% {
+      /* transform: scale(1) skew(0deg, 0deg); */
+      filter: blur(2px) contrast(100%);
+    }
+  }

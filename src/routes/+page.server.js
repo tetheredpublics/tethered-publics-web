@@ -2,7 +2,7 @@ import { TP_ART_API_URL, TP_ART_API_KEY } from '$env/static/private';
 
 const tempFeedItems = [{
     "item_id": "None",
-    "title": "Home Collection 2023",
+    "title": "OPEN CALL: Home Collection 2023",
     "start_date": "2022-01-16T00:18:11+00:00",
     "end_date": "2023-03-13T00:00:00+00:00",
     "kind": "opportunity",
@@ -15,16 +15,17 @@ const tempFeedItems = [{
 }]
 
 function applyTempFeedItems(feed) {
-    return tempFeedItems.concat(feed);
+    return feed.concat(tempFeedItems);
 }
 
 async function fetchFeed() {
     const response = await fetch(
-        `${TP_ART_API_URL}/v1.2/feed`, {
+        `${TP_ART_API_URL}/api/2/feed`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
-            "x-api-key": TP_ART_API_KEY,
+            "tp-api-key": TP_ART_API_KEY,
+            "tp-client-version": "platform=web,version=0,env=prod",
         },
     }
     );

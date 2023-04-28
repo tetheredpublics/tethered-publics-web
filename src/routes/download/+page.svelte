@@ -47,16 +47,23 @@
 <div class="container">
 	<div class="flex-container" style="justify-content: center">
 		<div class="flex-item">
-			<h1>App Store</h1>
+			<h2>App Store</h2>
 			<img
 				title="IOS QR code downlaod link"
 				alt="IOS QR code downlaod link"
 				src="/images/ios-qr-code.jpeg"
 			/>
-			<p>Scan the QR code to open on your iPhone</p>
+			<p>
+				Scan the QR code to open on your iPhone
+				<br/>
+				<a style="color: blue;" href="https://apps.apple.com/gb/app/tethered-publics/id1634618407?ign-itscg=30200&ign-itsct=apps_box_link"
+				target="_blank" rel="noreferrer">
+				Open in the App Store
+				</a>
+			</p>
 		</div>
 		<div class="flex-item">
-			<h1>Google Play</h1>
+			<h2>Google Play</h2>
 			<p class="large-paragraph">Android App Coming Soon...</p>
 		</div>
 	</div>
